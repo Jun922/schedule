@@ -5,4 +5,5 @@ app_name = 'schedule'
 
 urlpatterns = [
   path('', views.schedule_list, name='schedule_list'),
+  path("add/", views.add_event, name="add_event"),
 ]
