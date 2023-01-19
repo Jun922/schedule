@@ -75,3 +75,9 @@ def get_events(request):
       )
 
   return JsonResponse(list, safe=False)
+
+def schedule_detail(request, pk):
+  content = {
+    'schedule': get_object_or_404(Event, pk=pk),
+  }
+  return render(request, 'schedule/schedule_detail.html', content)

@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
 <head>
   <meta charset='utf-8' />
@@ -10,12 +9,23 @@
 </head>
 
 <body>
-  <main class="column is-7">
-    <div id='calendar'></div>
-    {% load static %}
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.min.js"></script>
-    <script src="{% static 'schedule/app.js' %}"></script>
-  </main>
+  <div class="section">
+    <div class="container">
+      <div class="columns">
+        <main class="column is-7">
+          <div id='calendar'></div>
+          {% load static %}
+          <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.min.js"></script>
+          <script src="{% static 'schedule/app.js' %}"></script>
+        </main>
+        <aside class="column is-offset-1 is-4">
+          <aside class="column is-4 is-offset-1 menu">
+            {% block content %}{% endblock %}
+          </aside>
+        </aside>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
