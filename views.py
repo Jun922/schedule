@@ -39,8 +39,7 @@ def add_event(request):
     end_date=formatted_end_date,
   )
   event.save()
-
-  return HttpResponse("")
+  return redirect('schedule:schedule_detail')
 
 def get_events(request):
   if request.method == "GET":
@@ -78,6 +77,6 @@ def get_events(request):
 
 def schedule_detail(request):
   side = {
-    'detail': get_object_or_404(Event),
+    'detail': Event.objects.all().order_by('start_date'),
   }
   return render(request, 'schedule/schedule_detail.html', side)
