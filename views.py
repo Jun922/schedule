@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from django.template import loader
 from django.http import HttpResponse
 from .models import Event
@@ -76,8 +76,8 @@ def get_events(request):
 
   return JsonResponse(list, safe=False)
 
-def schedule_detail(request, pk):
-  content = {
-    'schedule': get_object_or_404(Event, pk=pk),
+def schedule_detail(request):
+  side = {
+    'detail': get_object_or_404(Event),
   }
-  return render(request, 'schedule/schedule_detail.html', content)
+  return render(request, 'schedule/schedule_detail.html', side)

@@ -1,10 +1,7 @@
 {% extends 'schedule/schedule_list.html' %}
 
-{% block content %}
-  <h1>スケジュージュ一覧</h1>
-  {% for event in schedule_list %}
-    <article class="box">
-      <h2><a href="{% url 'schedule:schedule_detail' event.pk %}">{{ event.event_name }}</a></h2>
-    </article>
-  {% endfor %}
+{% block side %}
+  <article class="box">
+    <h1>{{ detail.event_name }}</h1>
+  </article>
 {% endblock %}
