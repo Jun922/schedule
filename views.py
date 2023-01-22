@@ -9,10 +9,12 @@ from django.middleware.csrf import get_token
 from django.http import JsonResponse
 from .forms import CalendarForm
 
-def schedule_list(request):
+def schedule_index(request):
   get_token(request)
-  template = loader.get_template("schedule/schedule_list.html")
-  return HttpResponse(template.render())
+  side = {
+    'list': Event.objects.all().order_by('start_date'),
+  }
+  return render(request, 'schedule/schedule_index.html', side)
 
 def add_event(request):
   if request.method == "GET":
@@ -74,9 +76,3 @@ def get_events(request):
       )
 
   return JsonResponse(list, safe=False)
-
-def schedule_detail(request):
-  side = {
-    'detail': Event.objects.all().order_by('start_date'),
-  }
-  return render(request, 'schedule/schedule_detail.html', side)
