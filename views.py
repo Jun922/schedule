@@ -7,7 +7,7 @@ import time
 import json
 from django.middleware.csrf import get_token
 from django.http import JsonResponse
-from .forms import CalendarForm
+from .forms import CalendarForm, ScheduleCreateForm
 
 def schedule_index(request):
   get_token(request)
@@ -76,3 +76,22 @@ def get_events(request):
       )
 
   return JsonResponse(list, safe=False)
+
+def schedule_detail(request, pk):
+  content = {
+    'event': get_object_or_404(Event, pk=pk)
+  }
+  return render(request, 'schedule/schedule_detail.html', content)
+
+
+def schedule_update(request, pk):
+  event = get_object_or_404(Event, pk=pk)
+  form = ScheduleCreateForm(request.POST or None, instance=schedule)
+  if request.method == 'POST' and form.is_valid():
+    form.save()
+    return redirect('schedule:schedule_index')
+
+  context = {
+     'form': form
+  }
+  return render(request, 'schedule/schedule_update.html', context)

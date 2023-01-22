@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8' />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+  <script src="https://kit.fontawesome.com/eea364082e.js" crossorigin="anonymous"></script>
+</head>
+
+{% block content %}
+  <div class="modal is-active">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">{{ event.event_name }}</p>
+        <button class="delete" onclick="location.href='/schedule'" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        <div class="content">
+          <p>予定内容 : {{ event.info }}</p>
+          <p>{{ event.start_date }} - {{ event.end_date }}</p>
+        </div>
+        <div class="tabs is-right is-size-6">
+          <ul>
+            <li class="is-active">
+              <a>
+                <span class="icon-text">
+                  <span class="icon is-small">
+                    <i class="far fa-edit" aria-hidden="true"></i>
+                  </span>
+                  <span>update</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a>
+                <span class="icon is-small">
+                  <i class="far fa-trash-alt" aria-hidden="true"></i>
+                </span>
+                <span>delete</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <footer class="modal-card-foot">
+      </footer>
+    </div>
+  </div>
+{% endblock %}
