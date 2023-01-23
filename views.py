@@ -86,7 +86,7 @@ def schedule_detail(request, pk):
 
 def schedule_update(request, pk):
   event = get_object_or_404(Event, pk=pk)
-  form = ScheduleCreateForm(request.POST or None, instance=schedule)
+  form = ScheduleCreateForm(request.POST or None, instance=event)
   if request.method == 'POST' and form.is_valid():
     form.save()
     return redirect('schedule:schedule_index')
