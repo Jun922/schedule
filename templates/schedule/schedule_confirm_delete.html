@@ -1,0 +1,7 @@
+<p>{{ event.event_name }}のレビューを削除します。<br>
+  よろしいですか？
+</p>
+<form action="" method="POST">
+  {% csrf_token %}
+  <button type="submit">削除</button>
+</form>

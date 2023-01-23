@@ -9,4 +9,5 @@ urlpatterns = [
   path("list/", views.get_events, name="get_events"),
   path('detail/<int:pk>/', views.schedule_detail, name='schedule_detail'),
   path('update/<int:pk>/', views.schedule_update, name='schedule_update'),
+  path('delete/<int:pk>/', views.schedule_delete, name='schedule_delete'),
 ]

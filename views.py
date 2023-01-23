@@ -95,3 +95,14 @@ def schedule_update(request, pk):
      'form': form
   }
   return render(request, 'schedule/schedule_update.html', context)
+
+def schedule_delete(request, pk):
+  event = get_object_or_404(Event, pk=pk)
+  if request.method == 'POST':
+    event.delete()
+    return redirect('schedule:schedule_index')
+
+  context = {
+    'event': event
+  }
+  return render(request, 'schedule/schedule_confirm_delete.html', context)

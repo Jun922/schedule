@@ -8,25 +8,22 @@
 </head>
 
 <form action="" method="POST">
-
-<div class="modal is-active">
-  <div class="modal-background"></div>
-  <div class="modal-card">
-    <header class="modal-card-head">
-      <p class="modal-card-title">モーダルカードのタイトル</p>
-    </header>
-    <section class="modal-card-body">
-      <div class="content">
-        <p>予定内容 : {{ event.info }}</p>
-        <p>{{ event.start_date }} - {{ event.end_date }}</p>
+  <div class="modal is-active">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">モーダルカードのタイトル</p>
+      </header>
+      <section class="modal-card-body">
+        <div class="content">
           {{ form.as_p }}
           {% csrf_token %}
-      </div>
-    </section>
-  <footer class="modal-card-foot">
-      <button class="button is-success" type="submit">OK</button>
-      <button class="button">キャンセル</button>
-    </footer>
+        </div>
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button is-success" type="submit">OK</button>
+        <button class="button">キャンセル</button>
+      </footer>
+    </div>
   </div>
-</div>
 </form>
