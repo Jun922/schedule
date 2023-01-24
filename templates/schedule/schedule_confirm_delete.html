@@ -1,7 +1,30 @@
-<p>{{ event.event_name }}のレビューを削除します。<br>
-  よろしいですか？
-</p>
-<form action="" method="POST">
-  {% csrf_token %}
-  <button type="submit">削除</button>
-</form>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8' />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+  <script src="https://kit.fontawesome.com/eea364082e.js" crossorigin="anonymous"></script>
+</head>
+<div class="modal is-active">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">{{ event.event_name }}</p>
+      <button class="delete" onclick="location.href='/schedule'" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="content">
+        <p>{{ event.event_name }}のレビューを削除します。<br>
+          よろしいですか？
+        </p>
+        <form action="" method="POST">
+          {% csrf_token %}
+          <button type="submit">削除</button>
+        </form>        
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+    </footer>
+  </div>
+</div>
