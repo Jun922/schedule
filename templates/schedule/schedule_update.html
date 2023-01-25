@@ -1,5 +1,3 @@
-{% load widget_tweaks %}
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,13 +10,48 @@
   <div class="modal-background"></div>
   <div class="modal-card">
     <header class="modal-card-head">
-      <p class="modal-card-title">モーダルカードのタイトル</p>
+      <p class="modal-card-title">予定編集</p>
       <button class="delete" onclick="location.href='/schedule'" aria-label="close"></button>
     </header>
     <form action="" method="POST">
       <section class="modal-card-body">
         <div class="content">
-          {{ form.as_p }}
+          <form class="box">
+            <div class="field">
+              <label class="label">予定</label>
+              <div class="field has-addons">
+                <div class="control">
+                  <input class="input" type="text" placeholder="ウィンドウショッピング" >
+                </div>
+              </div>
+            </div>
+           
+            <div class="field">
+              <label class="label">予定日</label>
+              <div class="control has-icons-left">
+                <input class="input is-success" type="date" placeholder="予定開始日: e.g.2023-01-01">
+                <span class="icon is-small is-left">
+                  <i class="far fa-calendar-alt"></i>
+                </span>
+              </div>
+              <div class="control has-icons-left">
+                <input class="input is-success" type="date" placeholder="予定終了日: e.g.2023-01-03">
+                <span class="icon is-small is-left">
+                  <i class="far fa-calendar-alt"></i>
+                </span>
+              </div>
+
+            </div>
+           
+            <div class="field">
+              <label class="label">内容</label>
+              <div class="control has-icons-left">
+                <input class="input" type="text" placeholder="友人と買い物に出かける。">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-info"></i>
+                </span>
+              </div>
+            </div>
           {% csrf_token %}
         </div>
       </section>
