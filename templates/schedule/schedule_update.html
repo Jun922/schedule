@@ -21,7 +21,7 @@
               <label class="label">予定</label>
               <div class="field has-addons">
                 <div class="control">
-                  <input class="input" type="text" placeholder="ウィンドウショッピング" >
+                  <ul>{{ form.event_name }}</ul>
                 </div>
               </div>
             </div>
@@ -29,13 +29,13 @@
             <div class="field">
               <label class="label">予定日</label>
               <div class="control has-icons-left">
-                <input class="input is-success" type="date" placeholder="予定開始日: e.g.2023-01-01">
-                <span class="icon is-small is-left">
+                <ul>{{ form.start_date }}</ul>
+                <span class="icon large is-left">
                   <i class="far fa-calendar-alt"></i>
                 </span>
               </div>
               <div class="control has-icons-left">
-                <input class="input is-success" type="date" placeholder="予定終了日: e.g.2023-01-03">
+                <ul>{{ form.end_date }}</ul>
                 <span class="icon is-small is-left">
                   <i class="far fa-calendar-alt"></i>
                 </span>
@@ -46,7 +46,7 @@
             <div class="field">
               <label class="label">内容</label>
               <div class="control has-icons-left">
-                <input class="input" type="text" placeholder="友人と買い物に出かける。">
+                <ul>{{ form.info }}</ul>
                 <span class="icon is-small is-left">
                   <i class="fas fa-info"></i>
                 </span>
