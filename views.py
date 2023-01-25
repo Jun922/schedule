@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.template import loader
 from django.http import HttpResponse
+from django.http import Http404
 from .models import Event
 from .forms import EventForm
 import time
@@ -41,7 +42,7 @@ def add_event(request):
     end_date=formatted_end_date,
   )
   event.save()
-  return redirect('schedule:schedule_detail')
+  return redirect('schedule:schedule_index')
 
 def get_events(request):
   if request.method == "GET":
