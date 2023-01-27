@@ -21,3 +21,4 @@
 | event_name | CharField | null: false |
 - Association
   - 
+  
