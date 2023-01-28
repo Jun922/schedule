@@ -18,7 +18,7 @@
 #### Event
 | Column     | Type      | Options     |
 | -----------| ----------| ----------- |
-| event_name | CharField | null: false |
-- Association
-  - 
-  
+| event_name | CharField |             |
+| start_date | DateField |             |
+| end_date   | DateField |             |
+| info       | TextField |             |
