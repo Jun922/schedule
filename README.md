@@ -11,6 +11,7 @@
 ## 🔤 工夫した点
 
 ## 🔁　画面遷移図
+<<<<<<< HEAD
 ![画面遷移図.pdf](https://github.com/Jun922/schedule/files/10529821/screen-transition.pdf)
 
 ## 📖 テーブル設計
