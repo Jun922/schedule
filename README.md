@@ -11,7 +11,7 @@
 ## 🔤 工夫した点
 
 ## 🔁　画面遷移図
-![index](https://gyazo.com/eed68bb9282c5d3d0f5d09dea83d9262)
+![画面遷移図.pdf](https://github.com/Jun922/schedule/files/10529821/default.pdf)
 
 ## 📖 テーブル設計
 - ID/Pass
